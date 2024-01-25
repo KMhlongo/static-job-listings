@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap');
+:root {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 15px;
+  --des-dark-cyan: hsl(180, 29%, 50%);
+  --background-cyan: hsl(180, 52%, 96%);
+  --filter-cyan: hsl(180, 31%, 95%);
+  --dark-gray-cyan: hsl(180, 8%, 52%);
+  --very-dark-gray-cyan: hsl(180, 14%, 20%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: var(--background-cyan);
+  background-image: url('./assets/bg-header-desktop.svg');
+  background-image: url('./assets/bg-header-desktop.svg'), linear-gradient(var(--des-dark-cyan), var(--des-dark-cyan));
+  background-repeat: no-repeat;
+  background-size: 100% 15vh;
+  height: 100vh;
+  padding-inline: 8em;
+}
+
+.listing {
+  overflow: hidden;
+  position: relative;
+  background-color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2em;
+  border-radius: 0.5em;
+  margin: 0.5em 0 2em 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+.listing:hover{
+  ::after {
+    content: '';
+    position: absolute;
+    background-color: var(--des-dark-cyan);
+    height: 100%;
+    width: 0.5%;
+    left: 0;
+    top: 0;
+  }
+}
+
+.listing-description {
+  padding-inline: 2em;
+}
+
+.listing-company {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.listingcompnayname {
+  color: var(--des-dark-cyan);
+}
+
+.listingposition {
+  font-size: 18px;
+  padding: 0.3em 0;
+}
+
+.listingposition:hover {
+  color: var(--des-dark-cyan);
+  cursor: pointer;
+}
+
+.listingcompanynew {
+  background-color: var(--des-dark-cyan);
+  margin-left: 1em;
+}
+
+.listingcompanyfeatured {
+  background-color: var(--very-dark-gray-cyan);
+  margin-left: 0.5em;
+}
+
+.listingcompanynew, .listingcompanyfeatured {
+  padding: 0.3em 0.5em;
+  border-radius: 2em;
+  color: white;
+  font-size: 12px;
+}
+
+.listing-info {
+  display: flex;
+  flex-direction: row;
+  color: var(--dark-gray-cyan);
+}
+
+.bullet {
+  padding-inline: 0.75em;
+}
+
+.listing-tags {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: auto;
+}
+
+.tag {
+  padding: 0.4em;
+  background-color: var(--filter-cyan);
+  color: var(--des-dark-cyan);
+  border-radius: 0.2em;
+  margin-inline: 0.5em;
+  font-weight: 500;
+}
+
+.tag:hover {
+  cursor: pointer;
+  background-color: var(--des-dark-cyan);
+  color: white;
+}
+
+.activeTagsList {
+  height: 60px;
+  background-color: white;
+  padding: 1em;
+  margin-top: 15vh;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 0.5em;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+.activeTagContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.activeTag {
+  margin-right: 0;
+  border-radius: 0.2em 0 0 0.2em;
+}
+
+.activeTag:hover {
+  background-color: var(--filter-cyan);
+  color: var(--des-dark-cyan);
+  cursor: default;
+}
+
+.clearTags {
+  margin-left: auto;
+  color: var(--des-dark-cyan);
+}
+
+.clearTags:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.removeIconContainer {
+  background-color: var(--des-dark-cyan);
+  padding-inline: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 0.2em 0.2em 0;
+}
+
+.removeIconContainer:hover {
+  background-color: var(--very-dark-gray-cyan);
+  cursor: pointer;
+}
+
+@media screen and (max-width:600px) {
+  
+  body {
+    background-color: var(--background-cyan);
+    background-image: url('./assets/bg-header-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 15vh;
+    height: 100vh;
+    padding-inline: 1.5em;
+  }
+
+  .companylogo {
+    position: absolute;
+    top: 0;
+    left: 6%;
+    transform: translateY(-50%);
+    aspect-ratio: 1;
+    height: 50px;
+  }
+
+  .listing {
+    overflow: visible;
+    flex-direction: column;
+    padding: 2.5em 1.5em 1.5em 1.5em;
+    margin: 0.5em 0 3.5em 0;
+  }
+
+  .listing-description {
+    width: 100%;
+    padding-inline: 0;
+  }
+
+  .listing-tags {
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    margin: 0;
+    align-items: center;
+    width: 100%;
+  }
+
+  .listing .tag {
+    margin: 0 2em 1em 0;
+  }
+
+  hr {
+    width: 100%;
+    background-color: var(--dark-gray-cyan);
+    height: 1px;
+    border: none;
+    margin-block: 1em;
+  }
+
+}
